@@ -91,7 +91,7 @@ void create_acc()
         while (ID_no.length()<13 || ID_no.length()>13)
         	{
         		cout<<"Invalid length of ID number. Please enter valid ID number"<<endl;
-        		return;
+        		getline(cin, ID_no);
 			}
 
 		// Show confirmation details
@@ -137,7 +137,7 @@ void amount_depo()
         {
             balance[index_found]+=deposit;
             cout<<"Deposit Successfull"<<endl;
-            cout<<"Your Balance is "<<balance[index_found];
+            cout<<"Your Balance is "<<balance[index_found]<<endl;
         }
     else
         {
@@ -159,14 +159,14 @@ void amount_depo()
          {
              if(account_no==acc_numbers[j])
                  {
-                     cout<<"Your Account Balance is "<<balance[j];
+                     cout<<"Your Account Balance is "<<balance[j]<<endl;
                      cout<<"Enter your amount: ";
                      cin>>with_amount;
 
                          // Keep asking until withdrawal amount is valid (not more than balance)
                          while(with_amount>balance[j])
                              {
-                                 cout<<"Enter Valid Amount";
+                                 cout<<"Enter Valid Amount, Withdraw Amount cannot be greater than Balance:  ";
                                  cin>>with_amount;
                              
                              }
